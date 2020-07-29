@@ -1,0 +1,258 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BinFiles - Download binary test-files from various networks</title>
+    <link rel="stylesheet" href="css/foundation.min.css" />
+    <link rel="stylesheet" href="css/binfiles.css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <script src="js/vendor/modernizr.js"></script>
+  </head>
+  <body>
+    
+    <div class="contain-to-grid fixed">
+      <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+          <li class="name">
+            <h1><a href="#">BinFiles in:</a></h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+          <ul class="left">
+            <li><a href="#asia">Asia</a></li>
+            <li><a href="#eur">Europe</a></li>
+            <li><a href="#nam">North-America</a></li>
+            <li><a href="#sam">South-America</a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <h1>Test network-speed with BinFiles</h1>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <h2 name="eur" id="eur">Europe</h2>
+
+<table role="grid" id="eurTable" class="tablesorter">
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th>Provider</th>
+      <th>ASN</th>
+      <th>Protocol</th>
+      <th>XS</th>
+      <th>S</th>
+      <th>M</th>
+      <th>L</th>
+      <th>XL</th>
+      <th>XXL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="" class="flag flag-nl" /> NL</td>
+      <td><a href="http://www.bbned.nl/speedtest/" target="_blank">BBned</a></td>
+      <td>AS15670</td>
+      <td>HTTP</td>
+      <td>&nbsp;</td>
+      <td><a href="http://www.bbned.nl/scripts/speedtest/download/file32mb.bin">32 MB</a></td>
+      <td><a href="http://www.bbned.nl/scripts/speedtest/download/file100mb.bin">100 MB</a></td>
+      <td>&nbsp;</td>
+      <td><a href="http://www.bbned.nl/scripts/speedtest/download/file1000mb.bin">1000 MB</a></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><img src="" class="flag flag-nl" /> NL</td>
+      <td><a href="http://www.bit.nl/" target="_blank">BIT</a></td>
+      <td>AS12859</td>
+      <td>FTP</td>
+      <td>&nbsp;</td>
+      <td><a href="ftp://ftp.bit.nl/pub/speedtest/10mb.bin">10 MB</a></td>
+      <td><a href="ftp://ftp.bit.nl/pub/speedtest/100mb.bin">100 MB</a></td>
+      <td><a href="ftp://ftp.bit.nl/pub/speedtest/500mb.bin">500 MB</a></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><img src="" class="flag flag-nl" /> NL</td>
+      <td><a href="http://www.bit.nl/" target="_blank">BIT</a></td>
+      <td>AS12859</td>
+      <td>HTTP</td>
+      <td>&nbsp;</td>
+      <td><a href="http://ftp.bit.nl/pub/speedtest/10mb.bin">10 MB</a></td>
+      <td><a href="http://ftp.bit.nl/pub/speedtest/100mb.bin">100 MB</a></td>
+      <td><a href="http://ftp.bit.nl/pub/speedtest/500mb.bin">500 MB</a></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><img src="" class="flag flag-nl" /> NL</td>
+      <td><a href="http://speedtest.kpn.net/" target="_blank">KPN</a></td>
+      <td>AS1136</td>
+      <td>FTP</td>
+      <td><a href="ftp://speedtest.kpn.net/001MB-file.bin">1 MB</a></td>
+      <td><a href="ftp://speedtest.kpn.net/008MB-file.bin">8 MB</a></td>
+      <td><a href="ftp://speedtest.kpn.net/128MB-file.bin">128 MB</a></td>
+      <td><a href="ftp://speedtest.kpn.net/512MB-file.bin">512 MB</a></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><img src="" class="flag flag-nl" /> NL</td>
+      <td><a href="http://speedtest.kpn.net/" target="_blank">KPN</a></td>
+      <td>AS1136</td>
+      <td>HTTP</td>
+      <td><a href="http://speedtest.kpn.net/ftp/001MB-file.bin">1 MB</a></td>
+      <td><a href="http://speedtest.kpn.net/ftp/008MB-file.bin">8 MB</a></td>
+      <td><a href="http://speedtest.kpn.net/ftp/128MB-file.bin">128 MB</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><img src="" class="flag flag-nl" /> NL</td>
+      <td><a href="http://luna.nl/" target="_blank">Luna.nl</a></td>
+      <td>AS12902</td>
+      <td>HTTP</td>
+      <td><a href="http://speedtest.luna.nl/bin/1mb.bin">1 MB</a></td>
+      <td><a href="http://speedtest.luna.nl/bin/10mb.bin">10 MB</a></td>
+      <td><a href="http://speedtest.luna.nl/bin/100mb.bin">100 MB</a></td>
+      <td>&nbsp;</td>
+      <td><a href="http://speedtest.luna.nl/bin/1000mb.bin">1000 MB</a></td>
+    </tr>
+    <tr>
+      <td><img src="" class="flag flag-nl" /> NL</td>
+      <td><a href="http://www.nxs.nl/" target="_blank">NXS</a></td>
+      <td>AS15879</td>
+      <td>HTTP</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><a href="http://www.nxs.nl/files/100mb.bin">100 MB</a></td>
+      <td>&nbsp;</td>
+      <td><a href="http://www.nxs.nl/files/1000mb.bin">1000 MB</a></td>
+    </tr>
+    <tr>
+      <td><img src="" class="flag flag-nl" /> NL</td>
+      <td><a href="http://www.proserve.nl/" target="_blank">ProServe</a></td>
+      <td>AS21155</td>
+      <td>HTTP</td>
+      <td>&nbsp;</td>
+      <td><a href="http://www.proserve.nl/10mb.bin">10 MB</a></td>
+      <td><a href="http://www.proserve.nl/100mb.bin">100 MB</a></td>
+      <td>&nbsp;</td>
+      <td><a href="http://www.proserve.nl/1000mb.bin">1000 MB</a></td>
+    </tr>
+    <tr>
+      <td><img src="" class="flag flag-nl" /> NL</td>
+      <td><a href="http://speedtest.tele2.net/" target="_blank">Tele2</a></td>
+      <td>AS1257</td>
+      <td>FTP</td>
+      <td><a href="ftp://speedtest.tele2.net/1MB.zip">1 MB</a></td>
+      <td><a href="ftp://speedtest.tele2.net/10MB.zip">10 MB</a></td>
+      <td><a href="ftp://speedtest.tele2.net/100MB.zip">100 MB</a></td>
+      <td>&nbsp;</td>
+      <td><a href="ftp://speedtest.tele2.net/1GB.zip">1024 MB</a></td>
+    </tr>
+    <tr>
+      <td><img src="" class="flag flag-nl" /> NL</td>
+      <td><a href="http://speedtest.tele2.net/" target="_blank">Tele2</a></td>
+      <td>AS1257</td>
+      <td>HTTP</td>
+      <td><a href="http://speedtest.tele2.net/1MB.zip">1 MB</a></td>
+      <td><a href="http://speedtest.tele2.net/10MB.zip">10 MB</a></td>
+      <td><a href="http://speedtest.tele2.net/100MB.zip">100 MB</a></td>
+      <td>&nbsp;</td>
+      <td><a href="http://speedtest.tele2.net/1GB.zip">1024 MB</a></td>
+    </tr>
+    <tr>
+      <td><img src="" class="flag flag-nl" /> NL</td>
+      <td><a href="http://www.tiscali.nl/" target="_blank">Tiscali</a></td>
+      <td>AS5615</td>
+      <td>FTP</td>
+      <td><a href="ftp://ftp.tiscali.nl/pub/test/1megabyte.bin">1 MB</a></td>
+      <td><a href="ftp://ftp.tiscali.nl/pub/test/10megabyte.bin">10 MB</a></td>
+      <td><a href="ftp://ftp.tiscali.nl/pub/test/100megabyte.bin">100 MB</a></td>
+      <td>&nbsp;</td>
+      <td><a href="ftp://ftp.tiscali.nl/pub/test/1000mb.bin">1000 MB</a></td>
+    </tr>
+    <tr>
+      <td><img src="" class="flag flag-nl" /> NL</td>
+      <td><a href="http://www.tweakdsl.nl/" target="_blank">TweakDSL</a></td>
+      <td>AS25596</td>
+      <td>FTP</td>
+      <td>&nbsp;</td>
+      <td><a href="ftp://ftp.tweakdsl.nl/test/10mb.bin">10 MB</a></td>
+      <td><a href="ftp://ftp.tweakdsl.nl/test/100mb.bin">100 MB</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><img src="" class="flag flag-nl" /> NL</td>
+      <td><a href="http://www.widexs.nl/" target="_blank">WideXS</a></td>
+      <td>AS12573</td>
+      <td>FTP</td>
+      <td><a href="ftp://mirror.widexs.nl/pub/speed/1mb.bin">1 MB</a></td>
+      <td><a href="ftp://mirror.widexs.nl/pub/speed/10mb.bin">10 MB</a></td>
+      <td><a href="ftp://mirror.widexs.nl/pub/speed/100mb.bin">100 MB</a></td>
+      <td>&nbsp;</td>
+      <td><a href="ftp://mirror.widexs.nl/pub/speed/1000mb.bin">1000 MB</a></td>
+    </tr>
+    <tr>
+      <td><img src="" class="flag flag-nl" /> NL</td>
+      <td><a href="http://www.widexs.nl/" target="_blank">WideXS</a></td>
+      <td>AS12573</td>
+      <td>HTTP</td>
+      <td><a href="http://mirror.widexs.nl/ftp/pub/speed/1mb.bin">1 MB</a></td>
+      <td><a href="http://mirror.widexs.nl/ftp/pub/speed/10mb.bin">10 MB</a></td>
+      <td><a href="http://mirror.widexs.nl/ftp/pub/speed/100mb.bin">100 MB</a></td>
+      <td>&nbsp;</td>
+      <td><a href="http://mirror.widexs.nl/ftp/pub/speed/1000mb.bin">1000 MB</a></td>
+    </tr>
+    <tr>
+      <td><img src="" class="flag flag-nl" /> NL</td>
+      <td><a href="http://www.xs4all.nl/" target="_blank">XS4All</a></td>
+      <td>AS3265</td>
+      <td>FTP</td>
+      <td>&nbsp;</td>
+      <td><a href="ftp://ftp.xs4all.nl/pub/test/10mb.bin">10 MB</a></td>
+      <td><a href="ftp://ftp.xs4all.nl/pub/test/100mb.bin">100 MB</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><img src="" class="flag flag-nl" /> NL</td>
+      <td><a href="http://www.xs4all.nl/" target="_blank">XS4All</a></td>
+      <td>AS3265</td>
+      <td>HTTP</td>
+      <td>&nbsp;</td>
+      <td><a href="http://download.xs4all.nl/test/10mb.bin">10 MB</a></td>
+      <td><a href="http://download.xs4all.nl/test/100mb.bin">100 MB</a></td>
+      <td>&nbsp;</td>
+      <td><a href="http://download.xs4all.nl/test/2gb.bin">2000 MB</a></td>
+    </tr>
+  </tbody>
+</table>
+
+      </div>
+    </div>
+    
+    <footer>
+      <div class="row">
+        <div class="large-12 columns">
+          <hr><p>Site by: <a href="http://klaver.it/" target="_blank">Klaver.IT</a></p>
+        </div>
+      </div>
+    </footer>
+    
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/jquery.tablesorter.min.js"></script>
+    <script>
+      $(document).foundation();
+      $(document).ready(function() { $("#eurTable").tablesorter( {sortList: [[0,0], [1,0]]} ); } );
+    </script>
+  </body>
+</html>
