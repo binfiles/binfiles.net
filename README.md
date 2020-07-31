@@ -22,7 +22,7 @@ Data files are created using binary byte sizes.  For example, 1MB = 1048576 Byte
 
 The data files were generated using this command with a 1MB data file as an example:
 
-fsutil file createNew 1048576.bin 1048576
+    fsutil file createNew 1048576.bin 1048576
 
 These are the sizes currently supported on binfiles.net mirrors:
 
@@ -42,15 +42,15 @@ These are the commands used to generate each file hash with the 1MB data file as
 
 SHA256:
 
-(Get-FileHash .\1048576.bin -Algorithm SHA256 | Select-Object Hash) -Split "`n" -Replace "@{Hash=","" -Replace "}","" > 1048576.sha256
+    (Get-FileHash .\1048576.bin -Algorithm SHA256 | Select-Object Hash) -Split "`n" -Replace "@{Hash=","" -Replace "}","" > 1048576.sha256
 
 SHA1:
 
-(Get-FileHash .\1048576.bin -Algorithm SHA1 | Select-Object Hash) -Split "`n" -Replace "@{Hash=","" -Replace "}","" > 1048576.sha1
+    (Get-FileHash .\1048576.bin -Algorithm SHA1 | Select-Object Hash) -Split "`n" -Replace "@{Hash=","" -Replace "}","" > 1048576.sha1
 
 MD5:
 
-(Get-FileHash .\1048576.bin -Algorithm MD5 | Select-Object Hash) -Split "`n" -Replace "@{Hash=","" -Replace "}","" > 1048576.md5
+    (Get-FileHash .\1048576.bin -Algorithm MD5 | Select-Object Hash) -Split "`n" -Replace "@{Hash=","" -Replace "}","" > 1048576.md5
 
 ### Generate All Data Files and File Hashes
 
