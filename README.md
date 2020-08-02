@@ -52,6 +52,30 @@ MD5:
 
     (Get-FileHash .\1048576.bin -Algorithm MD5 | Select-Object Hash) -Split "`n" -Replace "@{Hash=","" -Replace "}","" > 1048576.md5
 
-### Generate All Data Files and File Hashes
+### Generate and upload entirely new data and hash files
 
-Run the generate.ps1 script, then upload the resulting .bin, .sha256, .sha1, .md5 files to the AWS S3 bucket.  After the latest files are available, then download the files to mirror servers.
+1. Navigate to `/mirror`
+
+1. Run `s3-generate.ps1` to create all of the `.bin`, `.sha256`, `.sha1`, and `.md5` files
+
+1. Run `s3-upload.ps1` to upload the contents of `/mirror` to `s3.binfiles.net`
+
+1. In CloudFlare, use the Purge Cache function to clear out old file versions
+
+## Ensure all files on a mirror server are the latest versions
+
+1. Login to the mirror server and navigate to the publicly accessible folder here mirror files are saved
+
+1. Run `mirror-sync.ps1` to download:
+   * All new data files and hash files not present on the mirror
+   * Any files on the mirror whose local hash files are missing
+   * Any files on the mirror whose hash files do not match the hash files on s3.binfiles.net
+   * Any files whose locally computed hash does not match their previously downloaded hash files
+
+## Setup a new mirror server
+
+1. Ensure FTP and/or HTTP (not HTTPS) services are active on the mirror server
+
+1. Choose a publicly accessible folder where the mirror files will be saved
+
+1. Run the `mirror-download.ps1` script to download the latest files to a mirror server
