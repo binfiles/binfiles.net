@@ -1,7 +1,10 @@
 # binfiles.net
 
-## Public Website
+## Overview
 
+![Architecture Diagram](./docs/img/binfiles-architecture.svg)
+
+## Public Website
 
 
 ## Data Files and Hash Files
