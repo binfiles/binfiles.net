@@ -1,7 +1,7 @@
 import copy
 import hashlib
 import json
-import os.path
+import os
 from os import path
 
 # Describe all sizes of files we need to create
@@ -12,7 +12,7 @@ hashFileTypes = ["sha256", "sha1", "md5"]
 
 # Setup the stub object that will be used to record data and hash file details
 serverFileStub = {
-	"name": "",
+	"filename": "",
 	"size": 0,
 	"hashes": []
 }
@@ -32,7 +32,7 @@ for size in dataFileSizes:
 
 	# Start filling out the file stub
 	newFile = copy.deepcopy(serverFileStub);
-	newFile["name"] = dataFileName
+	newFile["filename"] = dataFileName
 	newFile["size"] = size
 
 	# Attempt to delete the bin file if it exists
@@ -65,15 +65,12 @@ for size in dataFileSizes:
 				pass
 
 		# Detect the hash type and set up the hashlib worker for the next section
-
 		if type == "sha256":
-			file_hash = hashlib.sha256()
-
+			hashMethod = hashlib.sha256()
 		elif type == "sha1":
-			file_hash = hashlib.sha1()
-
+			hashMethod = hashlib.sha1()
 		elif type == "md5":
-			file_hash = hashlib.md5()
+			hashMethod = hashlib.md5()
 
 		# The size of each read from the file
 		BLOCK_SIZE = 65536
@@ -82,12 +79,12 @@ for size in dataFileSizes:
 		with open(dataFileName, 'rb') as f:
 			fb = f.read(BLOCK_SIZE)
 			while len(fb) > 0:
-				file_hash.update(fb)
+				hashMethod.update(fb)
 				fb = f.read(BLOCK_SIZE)
 
 		# Write the hash data to the hashFileName
 		f = open(hashFileName, "w")
-		f.write(file_hash.hexdigest())
+		f.write(hashMethod.hexdigest())
 		f.close()
 
 		print("Done")
