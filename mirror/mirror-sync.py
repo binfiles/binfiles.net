@@ -2,6 +2,7 @@ import hashlib
 import json
 import os
 import requests
+import sys
 import wget
 from os import path
 from urllib.request import urlopen, Request
@@ -13,7 +14,17 @@ serverBaseURL = "https://s3.binfiles.net/"
 serverFileList = "mirror-file-list.json"
 
 # Collect the JSON data from the mirror file endpoint
-response = json.loads(requests.get(serverBaseURL + serverFileList).text)
+request = requests.get(serverBaseURL + serverFileList)
+response = json.loads(request.text)
+
+print("")
+if request.status_code == 200:
+	print("Downloaded mirror list")
+else:
+	print("Failed to download mirror list from " + serverBaseURL + serverFileList)
+	print("Sync cannot continue. Exiting ...")
+	sys.exit(0)
+print("")
 
 # List of files that are valid for hosting on this mirror, verified with the server mirror list
 validFileNames = []
@@ -32,6 +43,9 @@ def downloadFile(filename):
 		file.close()
 	else:
 		raise Exception("Download failed (Error " + str(response.status_code) + "): " + serverBaseURL + filename)
+
+print("Reviewing data files and hash files on the mirror list ...")
+print(" ")
 
 # Iterate over all files in the mirror list, check existence and validity, and download if needed
 for remoteDataFile in response["files"]:
@@ -108,6 +122,10 @@ for remoteDataFile in response["files"]:
 				else:
 					print("    Local " + remoteHashFile["type"] + " hash file matches server version for " + remoteDataFile["filename"])
 
+print(" ")
+print("Verifying filenames in current folder ...")
+print(" ")
+
 # Get a list of all files in the current folder
 folder = "./"
 localFiles = os.listdir(folder)
@@ -125,10 +143,10 @@ for localFile in localFiles:
 
 			# Delete the file since it doesn't match the required criteria
 			os.remove(os.path.join(folder, localFile))
-			print("    Deleted " + localFile)
+			print("    Deleted " + localFile + " (not present in mirror list)")
 
 		else:
-			print("    File is in mirror list")
+			print("    File is in mirror list, verified")
 
 	else:
-		print("    File has a *.py extension")
+		print("    File has *.py extension, skipping")
