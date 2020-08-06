@@ -28,15 +28,13 @@ Data files are created using binary byte sizes.  For example, 1MB = 1048576 Byte
 
 These are the sizes currently supported on binfiles.net mirrors:
 
-1MB:	1048576
-
-10MB:	10485760
-
-100MB:	104857600
-
-500MB:	524288000
-
-1000MB:	1048576000
+| Size | Bytes |
+| ---: | ---: |
+| `1MB` | 1048576 |
+| `10MB` | 10485760 |
+| `100MB` | 104857600 |
+| `500MB` | 524288000 |
+| `1000MB` | 1048576000 |
 
 ### File Hashes
 
