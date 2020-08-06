@@ -6,10 +6,11 @@
 
 ## Public Website
 
+This repo contains all public binfiles.net website data in `/docs`.  The website is hosted on GitHub Pages; requests to `binfiles.net` and `www.binfiles.net` are cached through CloudFlare's CDN.  Both IPv4 and IPv6 access is supported; HTTPS is required.
 
 ## Data Files and Hash Files
 
-This repo contains two type of files:  data files and file hashes.
+This repo contains two type of files in `/mirror`:  data files and file hashes.
 
 The data files are created using random binary data in standard sizes that are distributed to binfiles.net mirrors around the world.  Users can request these files from mirrors to test their download speeds across various paths.
 
@@ -17,7 +18,9 @@ File hashes are available in three formats:  SHA256 (recommended), SHA1, and MD5
 
 ### Storage
 
-Data Files and Hash Files are all stored on AWS S3 and accessible via s3.binfiles.net.  Please note that s3.binfiles.net should only be used for downloading the standard mirror data and not as a resource to perform network download tests.  Requests to s3.binfiles.net are cached through our CloudFlare CDN and will provide unpredictable results compared to network download tests initiated using binfiles.net mirrors.
+Data Files and Hash Files are stored on AWS S3 and accessible via s3.binfiles.net; requests to `s3.binfiles.net` are cached through CloudFlare's CDN.  Both IPv4 and IPv6 access is supported; HTTPS is required.
+
+Please note that `s3.binfiles.net` should only be used for mirror operators to download and sync/update standard mirror data and not as a resource for end users to perform network download tests.  Since requests are cached through CloudFlare, there will be unpredictable results compared to downloads initiated using local/regional binfiles.net mirrors.
 
 ### Data Files
 
