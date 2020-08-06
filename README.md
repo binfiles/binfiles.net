@@ -20,10 +20,6 @@ Data Files and Hash Files are all stored on AWS S3 and accessible via s3.binfile
 
 Data files are created using binary byte sizes.  For example, 1MB = 1048576 Bytes or 500MB = 524288000 Bytes.
 
-The data files were generated using this command with a 1MB data file as an example:
-
-    fsutil file createNew 1048576.bin 1048576
-
 These are the sizes currently supported on binfiles.net mirrors:
 
 1MB:	1048576
@@ -38,44 +34,28 @@ These are the sizes currently supported on binfiles.net mirrors:
 
 ### File Hashes
 
-These are the commands used to generate each file hash with the 1MB data file as an example:
-
-SHA256:
-
-    (Get-FileHash .\1048576.bin -Algorithm SHA256 | Select-Object Hash) -Split "`n" -Replace "@{Hash=","" -Replace "}","" > 1048576.sha256
-
-SHA1:
-
-    (Get-FileHash .\1048576.bin -Algorithm SHA1 | Select-Object Hash) -Split "`n" -Replace "@{Hash=","" -Replace "}","" > 1048576.sha1
-
-MD5:
-
-    (Get-FileHash .\1048576.bin -Algorithm MD5 | Select-Object Hash) -Split "`n" -Replace "@{Hash=","" -Replace "}","" > 1048576.md5
-
-### Generate and upload entirely new data and hash files
-
-1. Navigate to `/mirror`
-
-1. Run `s3-generate.ps1` to create all of the `.bin`, `.sha256`, `.sha1`, and `.md5` files
-
-1. Run `s3-upload.ps1` to upload the contents of `/mirror` to `s3.binfiles.net`
-
-1. In CloudFlare, use the Purge Cache function to clear out old file versions
+Hashes of data files are provided as an option for verifying the integrity of downloads.  Hash files are hosted on all mirrors.
 
 ## Ensure all files on a mirror server are the latest versions
 
 1. Login to the mirror server and navigate to the publicly accessible folder here mirror files are saved
 
-1. Run `mirror-sync.ps1` to download:
+1. Run `mirror-sync.py` to download:
    * All new data files and hash files not present on the mirror
    * Any files on the mirror whose local hash files are missing
    * Any files on the mirror whose hash files do not match the hash files on s3.binfiles.net
    * Any files whose locally computed hash does not match their previously downloaded hash files
 
+1. Please note that `mirror-sync.py` will delete all files not needed by the mirror in the current folder -- if hosting on a server with other non-mirror content, the binfiles.net mirror data should be stored in a separate folder, such as //yourdomain.com/mirror/
+
 ## Setup a new mirror server
 
 1. Ensure FTP and/or HTTP (not HTTPS) services are active on the mirror server
 
-1. Choose a publicly accessible folder where the mirror files will be saved
+1. Ensure that `python3` and `pip` are installed on the mirror server
 
-1. Run the `mirror-download.ps1` script to download the latest files to a mirror server
+1. Create a new publicly accessible folder where the mirror files will be saved, such as //yourdomain.com/mirror/
+
+1. Download the installer from https://s3.binfiles.net/mirror-setup.py
+
+1. Run the `mirror-setup.py` script to download the mirror files
