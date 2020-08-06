@@ -6,7 +6,7 @@ import wget
 from os import path
 from urllib.request import urlopen, Request
 
-# mirror-sync version: 2020-08-05(a)
+# mirror-sync version: 2020-08-05(b)
 
 # Describe the location of the mirror file list on the central distribution server
 serverBaseURL = "https://s3.binfiles.net/"
@@ -132,11 +132,3 @@ for localFile in localFiles:
 
 	else:
 		print("    File has a *.py extension")
-
-# Download the latest copy of mirror-sync
-clientFileName = "mirror-sync.py"
-try:
-	downloadFile(clientFileName)
-	print("Downloaded " + clientFileName)
-except:
-	print("Failed to download " + clientFileName)
