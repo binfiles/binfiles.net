@@ -55,7 +55,7 @@ for remoteDataFile in response["files"]:
 	
 	# If the data file doesn't exist, download it
 	if path.exists(remoteDataFile["filename"]) is False:
-		print("Local copy of " + remoteDataFile["filename"] + " is missing")
+		print("Local copy of " + remoteDataFile["filename"] + " is missing, downloading now ...")
 		try:
 			downloadFile(remoteDataFile["filename"])
 			print("    Downloaded " + remoteDataFile["filename"])
@@ -103,7 +103,7 @@ for remoteDataFile in response["files"]:
 
 			# Check whether local hash file exists and matches; if not, download it
 			if path.exists(remoteHashFile["filename"]) is False:
-				print("    Local " + remoteHashFile["type"] + " hash file is missing")
+				print("    Local " + remoteHashFile["type"] + " hash file is missing, downloading now ...")
 				try:
 					downloadFile(remoteHashFile["filename"])
 					print("        Downloaded " + remoteHashFile["filename"])
